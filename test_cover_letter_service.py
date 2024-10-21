@@ -146,7 +146,7 @@ class CoverLetterServiceTests(ApiBaseTest):
         )
 
         mock_generate.return_value = cover_letter
-        mock_list_all_exp_variant_strings.return_value = ["_beamjobs_exp_2"]
+        mock_list_all_exp_variant_strings.return_value = ["_exp_2"]
 
         # When
         cover_letter_data = (
@@ -185,7 +185,7 @@ class CoverLetterServiceTests(ApiBaseTest):
             ConversionEventNameEnum.COVER_LETTER_GENERATE.value,
         )
         self.assertEqual(conversion_event.resume, resume)
-        self.assertEqual(conversion_event.exp_variant_strings, ["_beamjobs_exp_2"])
+        self.assertEqual(conversion_event.exp_variant_strings, ["_exp_2"])
 
     @mock.patch("api.models.services.cover_letter_service.send_cover_letter_by_email")
     @mock.patch("api.models.services.cover_letter_service.generate_cover_letter")
@@ -269,7 +269,7 @@ class CoverLetterServiceTests(ApiBaseTest):
                         },
                     }
                 ],
-                "from": {"email": "somesender@gmail.com", "name": "BeamJobs"},
+                "from": {"email": "somesender@gmail.com", "name": "Sender"},
                 "template_id": cover_letter_service.SENDGRID_EMAIL_TEMPLATE_ID,
             }
         )
@@ -313,7 +313,7 @@ class CoverLetterServiceTests(ApiBaseTest):
                         },
                     }
                 ],
-                "from": {"email": "somesender@gmail.com", "name": "BeamJobs"},
+                "from": {"email": "somesender@gmail.com", "name": "Sender"},
                 "template_id": cover_letter_service.SENDGRID_EMAIL_TEMPLATE_ID,
             }
         )
