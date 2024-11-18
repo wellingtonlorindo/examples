@@ -114,7 +114,7 @@ def send_cover_letter_by_email(
                 "dynamic_template_data": dynamic_template_data,
             }
         ],
-        "from": {"email": settings.SENDGRID_EMAIL_SENDER, "name": "BeamJobs"},
+        "from": {"email": settings.SENDGRID_EMAIL_SENDER, "name": "Jobs"},
         "template_id": SENDGRID_EMAIL_TEMPLATE_ID,
     }
     try:
