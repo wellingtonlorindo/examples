@@ -356,7 +356,7 @@ class CoverLetterServiceTests(ApiBaseTest):
                         },
                     }
                 ],
-                "from": {"email": "somesender@gmail.com", "name": "BeamJobs"},
+                "from": {"email": "somesender@gmail.com", "name": "Jobs"},
                 "template_id": cover_letter_service.SENDGRID_EMAIL_TEMPLATE_ID,
             }
         )
